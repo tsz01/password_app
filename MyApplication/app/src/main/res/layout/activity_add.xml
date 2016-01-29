@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.tsz.myapplication.add">
+
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD_new"
+        android:id="@+id/button_new"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_webpage"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textview_name"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Webpage:"
+        android:id="@+id/textview_name"
+        android:layout_alignBaseline="@+id/editText_webpage"
+        android:layout_alignBottom="@+id/editText_webpage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        android:id="@+id/textView_user"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/editText_webpage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_user"
+        android:layout_below="@+id/editText_webpage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView_user"
+        android:layout_toEndOf="@+id/textView_user" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_password"
+        android:layout_alignTop="@+id/textView_passwd"
+
+        android:layout_alignRight="@+id/editText_webpage"
+        android:layout_alignEnd="@+id/editText_webpage"
+        android:layout_alignLeft="@+id/editText_other_info"
+        android:layout_alignStart="@+id/editText_other_info" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:id="@+id/textView_passwd"
+        android:layout_below="@+id/editText_user"
+        android:layout_toLeftOf="@+id/editText_webpage"
+        android:layout_toStartOf="@+id/editText_webpage"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="otherInfo:"
+        android:id="@+id/textView_other"
+        android:layout_below="@+id/editText_password"
+        android:layout_alignRight="@+id/textView_passwd"
+        android:layout_alignEnd="@+id/textView_passwd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_other_info"
+        android:layout_alignTop="@+id/textView_other"
+        android:layout_alignLeft="@+id/editText_user"
+        android:layout_alignStart="@+id/editText_user"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
