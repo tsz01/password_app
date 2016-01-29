@@ -1,7 +1,75 @@
 package com.example.tsz.myapplication;
 
-/**
- * Created by HSGG on 2016. 01. 29..
- */
-public class db_helper {
-}
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase;
+
+
+
+public class db_helper extends SQLiteOpenHelper {
+
+    public static final String DATABASE_NAME="pw.db";
+    public static final String TABLE_NAME="password_table";
+    public static final String COL_1="_id";
+    public static final String COL_2="WEBPAGE";
+    public static final String COL_3="USER";
+    public static final String COL_4="PASSWORD";
+    public static  final String COL_5="OTHER_INFO";
+
+    public db_helper(Context context){
+
+
+        super(context,DATABASE_NAME,null,1);
+
+
+
+
+    }
+
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+
+
+        db.execSQL("CREATE TABLE " + TABLE_NAME + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,WEBPAGE TEXT,USER TEXT,PASSWORD TEXT,OTHER_INFO TEXT)");
+        db.execSQL("CREATE TABLE login_table (_id INTEGER PRIMARY KEY AUTOINCREMENT, PW TEXT)");
+
+    }
+
+    public void onUpgrade(SQLiteDatabase db, int oldVersion,int newVersion){
+
+        db.execSQL("DROP TABLE IF EXSISTS "+TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXSISTS login_table");
+        onCreate(db);
+
+
+    }
+
+    public boolean insert(String WEBPAGE,String USER,String PASSWORD , String OTHER_INFO){
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2,WEBPAGE);
+        contentValues.put(COL_3,USER);
+        contentValues.put(COL_4, PASSWORD);
+        contentValues.put(COL_5, OTHER_INFO);
+
+        long result = db.insert(TABLE_NAME,null,contentValues);
+
+        if(result == -1)
+        {
+            return false;
+
+        }
+
+        else
+        {
+            return true;
+
+        }
+
+
+    }
