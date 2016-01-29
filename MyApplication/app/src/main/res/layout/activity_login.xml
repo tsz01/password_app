@@ -52,7 +52,9 @@
         android:text="Create PIN"
         android:id="@+id/button_create_pin"
         android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/button"
         android:layout_alignBottom="@+id/button"
+        android:layout_alignEnd="@+id/button" />
         android:layout_alignEnd="@+id/button"
         android:layout_alignStart="@+id/button" />
-</RelativeLayout>
+ </RelativeLayout>
