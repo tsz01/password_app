@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".add" />
-        <activity android:name=".login"></activity>
+        <activity android:name=".login" />
+        <activity android:name=".ch_passwd"></activity>
     </application>
 
 </manifest>

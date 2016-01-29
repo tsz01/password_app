@@ -105,4 +105,44 @@ public class db_helper extends SQLiteOpenHelper {
 
     }
 
+
+
+    public boolean insert_login_table(String PASSWORD){
+        String table_name ="login_table";
+        String PW="PW";
+
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(PW,PASSWORD);
+
+
+        long result = db.insert(table_name,null,contentValues);
+
+        if(result == -1)
+        {
+            return false;
+
+        }
+
+        else
+        {
+            return true;
+
+        }
+
+    }
+
+    public boolean update_passwd(String id,String PW)
+    {
+
+        SQLiteDatabase db= this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("id",id);
+        contentValues.put("PW",PW);
+        db.update("login_table", contentValues, "_id= ?", new String[]{id});
+        return true;
+
+    }
+
 }
